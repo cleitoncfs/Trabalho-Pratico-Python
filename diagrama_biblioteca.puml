@@ -1,0 +1,59 @@
+@startuml
+class Biblioteca {
+    - nome: String
+    - endereco: String
+    + registrar_livro()
+    + registrar_utilizador()
+    + gerar_relatorio()
+}
+
+class ItemBiblioteca {
+    + consultar_disponibilidade()
+}
+
+class Livro {
+    - titulo: String
+    - autor: String
+    - ISBN: String
+    - categoria: String
+    - disponibilidade: Boolean
+    + emprestar()
+    + devolver()
+}
+
+class Utilizador {
+    - nome: String
+    - endereco: String
+    - telefone: String
+    + registrar()
+}
+
+class Aluno {
+    - matricula: String
+}
+
+class Professor {
+    - departamento: String
+}
+
+class Emprestimo {
+    - data_emprestimo: Date
+    - data_devolucao: Date
+    + realizar_emprestimo()
+    + registrar_devolucao()
+}
+
+class Relatorio {
+    - data_geracao: Date
+    + gerar_relatorio()
+}
+
+Biblioteca --> Livro : "0..*"
+Biblioteca --> Utilizador : "0..*"
+Livro --> Emprestimo : "1"
+Utilizador --> Emprestimo : "0..*"
+Livro --|> ItemBiblioteca
+Aluno --|> Utilizador
+Professor --|> Utilizador
+Biblioteca --> Relatorio : "0..*"
+@enduml
