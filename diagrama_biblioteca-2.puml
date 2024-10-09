@@ -1,0 +1,138 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Biblioteca {
+    - logotipo: String
+    - site: String
+    - nif :Integer
+}
+class Entidade {
+    - nome: String
+    - telefone: String
+    - e_mail: String
+    - aniversario: Date
+    - data_criacao: Date
+    + registar_pessoa()
+    + registar_endereco()
+}
+class Endereco {
+    - morada: String
+    - cidade: String
+    - codigo_postal: String
+    - pais: String
+}
+class Pessoa {
+    - sexo: String
+    - doc_identificacao: String
+    - tipo_doc_identificacao: String
+    - tipo_pessoa: String
+    - tipo_acesso: String
+    - nif :Integer
+}
+class Bibliotecario {
+    - identificacao: String
+    + registar_livro()
+    + registar_biblioteca()
+    + registar_entidade()
+    + gerar_relatorio()
+    + gerar_devolucao()
+    + registar_reserva()
+}
+class Aluno {
+    - matricula: String
+}
+class Professor {
+    - departamento: String
+}
+class Utilizador {
+    - tipo: String
+}
+
+class ItemBiblioteca {
+    + consultar_disponibilidade()
+}
+
+class Livro {
+    - titulo: String
+    - descricao: String
+    + registar_exemplar()
+    + registar_autor()
+    + emprestar()
+    + devolver()
+    + consultar_disponibilidade()
+}
+class Autor {
+    - nome_autor: String
+}
+class Categoria_Genero {
+    - nome_cat_genero: String
+}
+
+class Exemplar {
+    - num_exemplar: String
+    - isbn: String
+    - capa: String
+    - ano_publicacao: Integer
+    - estado_exemplar: String
+    + registar_idioma()
+    + registar_editora()
+    + registar_estante()
+}
+class Acronimo {
+    - acronimo: String
+    - nome_acronimo: String
+}
+class Editora {
+    - nome_editora: String
+}
+class Idioma {
+    - abreviatura: String
+    - nome_idioma: String
+}
+class Estante {
+    - identificacao_estante: String
+}
+
+class Emprestimo {
+    - data_emprestimo: Date
+    - data_prevista_devolucao: Date
+    - data_devolucao: Date
+    + realizar_emprestimo()
+    + registar_devolucao()
+}
+
+class Reserva {
+    - data_pedido_reserva: Date
+    - data_mudanca_estado: Date
+    - estado_reserva: String
+}
+
+class Relatorio {
+    - num_relatorio: Integer
+    - tipo_relatorio: String
+    - data_geracao: Date
+    + gerar_relatorio()
+}
+
+Bibliotecario --> Livro : "1..*"
+Bibliotecario --> Entidade : "0..*"
+Biblioteca --> Livro : "0..*"
+Entidade --> Pessoa: "0..*"
+Entidade --|> Biblioteca: "1"
+Entidade --> Endereco: "0..*"
+Livro --> Exemplar: "0..*"
+Livro *-- Autor: "1..*"
+Livro *-- Categoria_Genero: "1"
+Livro *-- Acronimo: "0..1"
+Exemplar --> Emprestimo : "1"
+Exemplar --> Reserva: "1"
+Exemplar *-- Editora: "0..1"
+Exemplar *-- Idioma: "0..1"
+Exemplar --> Estante: "1"
+Exemplar --|> ItemBiblioteca
+Bibliotecario --|> Pessoa
+Aluno --|> Pessoa
+Professor --|> Pessoa
+Utilizador --|> Pessoa
+Exemplar --> Relatorio: "0..*"
+@enduml
