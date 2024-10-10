@@ -4,7 +4,6 @@ skinparam classAttributeIconSize 0
 class Biblioteca {
     - logotipo: String
     - site: String
-    - nif :Integer
 }
 class Entidade {
     - nome: String
@@ -12,6 +11,7 @@ class Entidade {
     - e_mail: String
     - aniversario: Date
     - data_criacao: Date
+    - nif: Integer
     + registar_pessoa()
     + registar_endereco()
 }
@@ -27,7 +27,6 @@ class Pessoa {
     - tipo_doc_identificacao: String
     - tipo_pessoa: String
     - tipo_acesso: String
-    - nif :Integer
 }
 class Bibliotecario {
     - identificacao: String
