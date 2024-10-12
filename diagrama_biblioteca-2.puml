@@ -121,11 +121,11 @@ class Relatorio {
 }
 
 Bibliotecario --> ItemBiblioteca : "1..*"
-Bibliotecario --> Entidade : "0..*"
+Bibliotecario --> Entidade : "1..*"
 Biblioteca --> ItemBiblioteca : "0..*"
-Entidade --> Pessoa: "0..*"
+Entidade --> Pessoa: "1..*"
 Entidade --|> Biblioteca: "1"
-Entidade --> Endereco: "0..*"
+Entidade --> Endereco: "1..*"
 ItemBiblioteca *-- Indice: "1..*"
 ItemBiblioteca *-- Categoria_Genero: "1..*"
 ItemBiblioteca *-- Tema: "1..*"
