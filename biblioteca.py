@@ -158,8 +158,8 @@ if __name__ == "__main__":
     biblioteca.adicionar_item(item1)
 
     # Criando um bibliotecário
-    bibliotecario = Bibliotecario(nome="Carlos Silva", telefone="123456789", e_mail="carlos@biblioteca.com", 
-                                  aniversario=date(1985, 5, 15), data_criacao=date(2020, 1, 10), 
+    bibliotecario = Bibliotecario(nome="Cleiton Santos", telefone="123456789", e_mail="cleiton@biblioteca.com", 
+                                  aniversario=date(1983, 8, 3), data_criacao=date(2020, 1, 10), 
                                   nif=987654321, sexo="Masculino", doc_identificacao="123456789", tipo_doc_identificacao="BI", 
                                   tipo_pessoa="Funcionário", tipo_acesso="Admin", identificacao="B001")
 
