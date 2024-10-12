@@ -1,6 +1,8 @@
 from datetime import date
 
 # Classe base para todas as entidades
+
+
 class Entidade:
     def __init__(self, nome: str, telefone: str, e_mail: str, aniversario: date, data_criacao: date, nif: int):
         self.nome = nome
@@ -15,6 +17,8 @@ class Entidade:
         self.endereco = endereco
 
 # Classe de Endereço
+
+
 class Endereco:
     def __init__(self, morada: str, cidade: str, codigo_postal: str, pais: str):
         self.morada = morada
@@ -23,6 +27,8 @@ class Endereco:
         self.pais = pais
 
 # Biblioteca herda de Entidade
+
+
 class Biblioteca(Entidade):
     def __init__(self, nome: str, telefone: str, e_mail: str, aniversario: date, data_criacao: date, nif: int, logotipo: str, site: str):
         super().__init__(nome, telefone, e_mail, aniversario, data_criacao, nif)
@@ -43,8 +49,10 @@ class Biblioteca(Entidade):
         print(f"Quantidade de itens: {len(self.itens_biblioteca)}")
 
 # Classe Pessoa herda de Entidade
+
+
 class Pessoa(Entidade):
-    def __init__(self, nome: str, telefone: str, e_mail: str, aniversario: date, data_criacao: date, nif: int, sexo: str, 
+    def __init__(self, nome: str, telefone: str, e_mail: str, aniversario: date, data_criacao: date, nif: int, sexo: str,
                  doc_identificacao: str, tipo_doc_identificacao: str, tipo_pessoa: str, tipo_acesso: str):
         super().__init__(nome, telefone, e_mail, aniversario, data_criacao, nif)
         self.sexo = sexo
@@ -54,10 +62,12 @@ class Pessoa(Entidade):
         self.tipo_acesso = tipo_acesso
 
 # Classe Bibliotecário herda de Pessoa
+
+
 class Bibliotecario(Pessoa):
-    def __init__(self, nome: str, telefone: str, e_mail: str, aniversario: date, data_criacao: date, nif: int, sexo: str, 
+    def __init__(self, nome: str, telefone: str, e_mail: str, aniversario: date, data_criacao: date, nif: int, sexo: str,
                  doc_identificacao: str, tipo_doc_identificacao: str, tipo_pessoa: str, tipo_acesso: str, identificacao: str):
-        super().__init__(nome, telefone, e_mail, aniversario, data_criacao, nif, sexo, doc_identificacao, tipo_doc_identificacao, 
+        super().__init__(nome, telefone, e_mail, aniversario, data_criacao, nif, sexo, doc_identificacao, tipo_doc_identificacao,
                          tipo_pessoa, tipo_acesso)
         self.identificacao = identificacao
 
@@ -69,8 +79,10 @@ class Bibliotecario(Pessoa):
         print(f"Sexo: {self.sexo}")
 
 # Classe ItemBiblioteca (substitui Livro)
+
+
 class ItemBiblioteca:
-    def __init__(self, num_inventario: str, ident_item: str, data_entrada: date, titulo: str, descricao: str, tipo_item: str, 
+    def __init__(self, num_inventario: str, ident_item: str, data_entrada: date, titulo: str, descricao: str, tipo_item: str,
                  imagem: str, ano_publicacao: int, estado_exemplar: str):
         self.num_inventario = num_inventario
         self.ident_item = ident_item
@@ -114,13 +126,17 @@ class ItemBiblioteca:
             print(f"Estante: {self.estante.identificacao_estante}")
 
 # Classes auxiliares: CategoriaGenero, Tema, Interveniente, Idioma, Estante
+
+
 class CategoriaGenero:
     def __init__(self, nome_cat_genero: str):
         self.nome_cat_genero = nome_cat_genero
 
+
 class Tema:
     def __init__(self, nome_tema: str):
         self.nome_tema = nome_tema
+
 
 class Interveniente:
     def __init__(self, num_interveniente: str, nome_interveniente: str, descricao_interveniente: str, tipo_interveniente: str):
@@ -129,25 +145,28 @@ class Interveniente:
         self.descricao_interveniente = descricao_interveniente
         self.tipo_interveniente = tipo_interveniente
 
+
 class Idioma:
     def __init__(self, abreviatura: str, nome_idioma: str):
         self.abreviatura = abreviatura
         self.nome_idioma = nome_idioma
 
+
 class Estante:
     def __init__(self, identificacao_estante: str):
         self.identificacao_estante = identificacao_estante
 
+
 # Exemplo de execução
 if __name__ == "__main__":
     # Criando um objeto da classe Biblioteca
-    biblioteca = Biblioteca(nome="Biblioteca Central", telefone="1234-5678", e_mail="contato@biblioteca.com", 
-                            aniversario=date(2000, 1, 1), data_criacao=date(2024, 10, 10), nif=123456789, 
+    biblioteca = Biblioteca(nome="Biblioteca Central", telefone="1234-5678", e_mail="contato@biblioteca.com",
+                            aniversario=date(2000, 1, 1), data_criacao=date(2024, 10, 10), nif=123456789,
                             logotipo="Logo", site="www.biblioteca.com")
 
     # Criando um item de biblioteca
-    item1 = ItemBiblioteca(num_inventario="123", ident_item="ITM001", data_entrada=date(2024, 10, 10), 
-                           titulo="Programação Python Avançada", descricao="Livro técnico sobre Python", 
+    item1 = ItemBiblioteca(num_inventario="123", ident_item="ITM001", data_entrada=date(2024, 10, 10),
+                           titulo="Programação Python Avançada", descricao="Livro técnico sobre Python",
                            tipo_item="Livro", imagem="capa.jpg", ano_publicacao=2023, estado_exemplar="Novo")
 
     # Criando uma estante e associando ao item
@@ -158,9 +177,9 @@ if __name__ == "__main__":
     biblioteca.adicionar_item(item1)
 
     # Criando um bibliotecário
-    bibliotecario = Bibliotecario(nome="Cleiton Santos", telefone="123456789", e_mail="cleiton@biblioteca.com", 
-                                  aniversario=date(1983, 8, 3), data_criacao=date(2020, 1, 10), 
-                                  nif=987654321, sexo="Masculino", doc_identificacao="123456789", tipo_doc_identificacao="BI", 
+    bibliotecario = Bibliotecario(nome="Cleiton Santos", telefone="123456789", e_mail="cleiton@biblioteca.com",
+                                  aniversario=date(1983, 8, 3), data_criacao=date(2020, 1, 10),
+                                  nif=987654321, sexo="Masculino", doc_identificacao="123456789", tipo_doc_identificacao="BI",
                                   tipo_pessoa="Funcionário", tipo_acesso="Admin", identificacao="B001")
 
     # Exibindo informações da biblioteca
