@@ -1,17 +1,16 @@
 @startuml
-skinparam classAttributeIconSize 0
-
+skinparam classAttributeIconSize 0
 class Biblioteca {
-    - logotipo: String
-    - site: String
+    + logotipo: String
+    + site: String
 }
 class Entidade {
     - nome: String
     - telefone: String
     - e_mail: String
     - aniversario: Date
-    - data_criacao: Date
     - nif: Integer
+    - data_criacao: Date
     + registar_pessoa()
     + registar_endereco()
 }
@@ -27,10 +26,11 @@ class Pessoa {
     - tipo_doc_identificacao: String
     - tipo_pessoa: String
     - tipo_acesso: String
+    - dados_acesso: String
 }
 class Bibliotecario {
     - identificacao: String
-    + registar_livro()
+    + registar_itembiblioteca()
     + registar_biblioteca()
     + registar_entidade()
     + gerar_relatorio()
@@ -48,41 +48,38 @@ class Utilizador {
 }
 
 class ItemBiblioteca {
-    + consultar_disponibilidade()
-}
-
-class Livro {
+    - num_inventario: String
+    - ident_item: String
+    - data_entrada: Date
     - titulo: String
     - descricao: String
-    + registar_exemplar()
+    - tipo_item: String
+    - imagem: String
+    - ano_publicacao: Integer
+    - estado_exemplar: String
+    + calcular_ident_item()
+    + registar_indice()
+    + registar_interveniente()
     + registar_autor()
+    + registar_tema()
     + emprestar()
     + devolver()
     + consultar_disponibilidade()
-}
-class Autor {
-    - nome_autor: String
-}
-class Categoria_Genero {
-    - nome_cat_genero: String
-}
-
-class Exemplar {
-    - num_exemplar: String
-    - isbn: String
-    - capa: String
-    - ano_publicacao: Integer
-    - estado_exemplar: String
     + registar_idioma()
     + registar_editora()
     + registar_estante()
 }
-class Acronimo {
-    - acronimo: String
-    - nome_acronimo: String
+class Categoria_Genero {
+    - nome_cat_genero: String
 }
-class Editora {
-    - nome_editora: String
+class Tema {
+    - nome_tema: String
+}
+class Interveniente {
+    - num_interveniente: String
+    - nome_interveniente: String
+    - descricao_interveniente: String
+    - tipo_interveniente: String
 }
 class Idioma {
     - abreviatura: String
@@ -92,6 +89,16 @@ class Estante {
     - identificacao_estante: String
 }
 
+class Indice {
+    - tipo_indice: String
+    - descricao_indice
+    + apurados_tema()
+    + apurados_idioma()
+    + apurados_editora()
+    + apurados_tipo_item()
+    + apurados_titulo()
+    + apurados_ident_item()
+}
 class Emprestimo {
     - data_emprestimo: Date
     - data_prevista_devolucao: Date
@@ -113,25 +120,23 @@ class Relatorio {
     + gerar_relatorio()
 }
 
-Bibliotecario --> Livro : "1..*"
+Bibliotecario --> ItemBiblioteca : "1..*"
 Bibliotecario --> Entidade : "0..*"
-Biblioteca --> Livro : "0..*"
+Biblioteca --> ItemBiblioteca : "0..*"
 Entidade --> Pessoa: "0..*"
 Entidade --|> Biblioteca: "1"
 Entidade --> Endereco: "0..*"
-Livro --> Exemplar: "0..*"
-Livro *-- Autor: "1..*"
-Livro *-- Categoria_Genero: "1"
-Livro *-- Acronimo: "0..1"
-Exemplar --> Emprestimo : "1"
-Exemplar --> Reserva: "1"
-Exemplar *-- Editora: "0..1"
-Exemplar *-- Idioma: "0..1"
-Exemplar --> Estante: "1"
-Exemplar --|> ItemBiblioteca
+ItemBiblioteca *-- Indice: "1..*"
+ItemBiblioteca *-- Categoria_Genero: "1..*"
+ItemBiblioteca *-- Tema: "1..*"
+ItemBiblioteca --> Emprestimo : "1"
+ItemBiblioteca --> Reserva: "1..*"
+ItemBiblioteca *-- Idioma: "0..1"
+ItemBiblioteca --> Estante: "1"
+ItemBiblioteca --> Interveniente:"1..*"
 Bibliotecario --|> Pessoa
 Aluno --|> Pessoa
 Professor --|> Pessoa
 Utilizador --|> Pessoa
-Exemplar --> Relatorio: "0..*"
+ItemBiblioteca --> Relatorio: "0..*"
 @enduml
