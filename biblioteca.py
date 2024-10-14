@@ -111,7 +111,7 @@ if __name__ == "__main__":
     sistema_emprestimos.gerar_relatorio_disponiveis([item1, item2])
 
 
-#Atualização do código conforme "tp2" 
+#Atualização do código conforme "tp2'" 
 
 # Registo de novos livros: O sistema possui a classe ItemBiblioteca, onde os livros são registrados com título, autor, ISBN, e categorias.
 
