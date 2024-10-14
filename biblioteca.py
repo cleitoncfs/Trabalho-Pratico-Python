@@ -113,12 +113,17 @@ if __name__ == "__main__":
 
 #Atualização do código conforme "tp2'" 
 
-# Registo de novos livros: O sistema possui a classe ItemBiblioteca, onde os livros são registrados com título, autor, ISBN, e categorias.
+# Registo de novos livros: O sistema possui a classe ItemBiblioteca, onde os livros são registrados com título, autor, ISBN, 
+# e categorias.
 
-# Empréstimo e devolução: A classe Emprestimo controla o processo de empréstimo e devolução, verificando a disponibilidade do item e alterando seu status conforme necessário.
+# Empréstimo e devolução: A classe Emprestimo controla o processo de empréstimo e devolução, verificando a disponibilidade 
+# do item e alterando seu status conforme necessário.
 
-# Registo de novos utilizadores: A classe Pessoa e suas subclasses permitem registrar utilizadores com nome, endereço e telefone. Classes como Aluno e Professor podem ser adicionadas para maior especialização.
+# Registo de novos utilizadores: A classe Pessoa e suas subclasses permitem registrar utilizadores com nome, endereço e 
+# telefone. Classes como Aluno e Professor podem ser adicionadas para maior especialização.
 
-# Consulta de disponibilidade: A classe Biblioteca oferece métodos para consultar a disponibilidade de itens através do método exibir_informacoes.
+# Consulta de disponibilidade: A classe Biblioteca oferece métodos para consultar a disponibilidade de itens através do 
+# método exibir_informacoes.
 
-# Geração de relatórios: Relatórios de itens emprestados e devolvidos são gerados com base no status dos empréstimos, e exibidos com detalhes sobre o livro e o utilizador associado.
+# Geração de relatórios: Relatórios de itens emprestados e devolvidos são gerados com base no status dos empréstimos, e 
+# exibidos com detalhes sobre o livro e o utilizador associado.
