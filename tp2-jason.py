@@ -168,8 +168,8 @@ if __name__ == "__main__":
 # O código gera relatórios de itens emprestados e disponíveis, conforme solicitado.
 # O código permite a criação de livros, utilizadores e a gestão de empréstimos, o que cobre as operações 
 # essenciais do sistema de gestão de biblioteca.
-# O código inclui a leitura do arquivo JSON, a criação de instâncias das classes a partir dos dados lidos e o 
-# ssssregistro dos empréstimos.
+# O código realiza a leitura do arquivo JSON, a criação de instâncias das classes a partir dos dados lidos e o 
+# registro dos empréstimos.
 
 
 
