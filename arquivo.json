@@ -1,0 +1,76 @@
+{
+    "livros": [
+      {
+        "titulo": "Python para Iniciantes",
+        "autor": "Adriana Medeiros",
+        "isbn": "123456789",
+        "categoria": "Programação",
+        "disponivel": false
+      },
+      {
+        "titulo": "Aprendendo Java",
+        "autor": "Cleiton Santos",
+        "isbn": "987654321",
+        "categoria": "Programação",
+        "disponivel": false
+      },
+      {
+        "titulo": "Estruturas de Dados",
+        "autor": "Raquel Patrício",
+        "isbn": "456789123",
+        "categoria": "Computação",
+        "disponivel": false
+      },
+      {
+        "titulo": "Inteligência Artificial",
+        "autor": "Jorge Pereira",
+        "isbn": "321654987",
+        "categoria": "Tecnologia",
+        "disponivel": false
+      }
+    ],
+    "utilizadores": [
+      {
+        "nome": "Adriana Medeiros",
+        "endereco": "Rua A, 123",
+        "telefone": "123456789"
+      },
+      {
+        "nome": "Cleiton Santos",
+        "endereco": "Rua B, 456",
+        "telefone": "987654321"
+      },
+      {
+        "nome": "Raquel Patrício",
+        "endereco": "Rua C, 789",
+        "telefone": "456123789"
+      },
+      {
+        "nome": "Jorge Pereira",
+        "endereco": "Rua D, 101",
+        "telefone": "321987654"
+      }
+    ],
+    "emprestimos": [
+      {
+        "utilizador": "Adriana Medeiros",
+        "livro": "Python para Iniciantes",
+        "data_emprestimo": "2024-10-11"
+      },
+      {
+        "utilizador": "Cleiton Santos",
+        "livro": "Aprendendo Java",
+        "data_emprestimo": "2024-10-10"
+      },
+      {
+        "utilizador": "Raquel Patrício",
+        "livro": "Estruturas de Dados",
+        "data_emprestimo": "2024-10-14"
+      },
+      {
+        "utilizador": "Jorge Pereira",
+        "livro": "Inteligência Artificial",
+        "data_emprestimo": "2024-10-14"
+      }
+    ]
+}
